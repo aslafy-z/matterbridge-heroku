@@ -1,3 +1,5 @@
+## GENERAL
+
 [general]
 RemoteNickFormat="{NICK} ({PROTOCOL})"
 TranslationAttribution=" [translated by :google:]"
@@ -6,6 +8,10 @@ ShowUserTyping=true
 MediaDownloadSize=1000000
 ShowJoinPart=false
 IconURL="https://identicons.github.com/{NICK}.png"
+
+[api]
+[api.local]
+BindAddress="0.0.0.0:${PORT}"
 
 ## ACCOUNTS
 
