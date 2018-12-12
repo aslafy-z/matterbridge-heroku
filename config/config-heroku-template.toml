@@ -1,50 +1,67 @@
 ## GENERAL
 
 [general]
-RemoteNickFormat="{NICK} ({PROTOCOL})"
-TranslationAttribution=" [translated by :google:]"
-PreserveThreading=true
-ShowUserTyping=true
-MediaDownloadSize=1000000
-ShowJoinPart=false
-IconURL="https://identicons.github.com/{NICK}.png"
+  RemoteNickFormat="{NICK} ({PROTOCOL})"
+  TranslationAttribution=" [translated by :google:]"
+  PreserveThreading=true
+  ShowUserTyping=true
+  MediaDownloadSize=1000000
+  ShowJoinPart=false
+  IconURL="https://identicons.github.com/{NICK}.png"
 
 [api]
-[api.local]
-BindAddress="0.0.0.0:${PORT}"
+  [api.local]
+    BindAddress="0.0.0.0:${PORT}"
+    Token="${MATTERBRIDGE_API_LOCAL_TOKEN}"
 
 ## ACCOUNTS
 
 [slack]
-[slack.swagfordev]
-Token="${MATTERBRIDGE_SLACK_SWAGFORDEV_TOKEN}"
-RemoteNickFormat="{NICK} ({PROTOCOL}): "
-ShowJoinPart=false
+  [slack.swagfordev]
+    Token="${MATTERBRIDGE_SLACK_SWAGFORDEV_TOKEN}"
+    RemoteNickFormat="{NICK} ({PROTOCOL}): "
+    ShowJoinPart=false
+    ShowUserTyping=false
 
 [telegram]
-[telegram.devswag]
-Token="${MATTERBRIDGE_TELEGRAM_DEVSWAG_TOKEN}" # bot user: swagmatters_bot
-RemoteNickFormat="{NICK} ({PROTOCOL}): "
-UseInsecureURL=true
-ShowJoinPart=false
+  [telegram.devswag]
+    Token="${MATTERBRIDGE_TELEGRAM_DEVSWAG_TOKEN}" # bot user: swagmatters_bot
+    RemoteNickFormat="{NICK} ({PROTOCOL}): "
+    UseInsecureURL=true
+    ShowJoinPart=false
+    ShowUserTyping=false
 
 [gitter]
-[gitter.swagfordev]
-Token="${MATTERBRIDGE_GITTER_SWAGFORDEV_TOKEN}"
-RemoteNickFormat="{NICK} ({PROTOCOL}): "
-ShowJoinPart=false
+  [gitter.swagfordev]
+    Token="${MATTERBRIDGE_GITTER_SWAGFORDEV_TOKEN}"
+    RemoteNickFormat="{NICK} ({PROTOCOL}): "
+    ShowJoinPart=false
+    ShowUserTyping=false
 
 ## GATEWAYS & BRIDGES
 
 [[gateway]]
-name="general"
-enable=true
+  name="general"
+  enable=true
   [[gateway.inout]]
     account="slack.swagfordev"
-    channel="tests"
+    channel="general"
+  [[gateway.inout]]
+    account="gitter.swagfordev"
+    channel="swag-for-dev/Lobby"
+  [[gateway.out]]
+    account="api.local"
+
+[[gateway]]
+  name="swag-opportunities"
+  enable=true
+  [[gateway.inout]]
+    account="slack.swagfordev"
+    channel="swag-opportunities"
   [[gateway.inout]]
     account="telegram.devswag"
     channel="-389042729"
   [[gateway.inout]]
     account="gitter.swagfordev"
-    channel="swag-for-dev/Testing"
+    channel="swag-for-dev/Opportunities"
+
