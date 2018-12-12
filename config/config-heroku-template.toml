@@ -33,10 +33,10 @@ name="general"
 enable=true
   [[gateway.inout]]
     account="slack.swagfordev"
-    channel="general"
+    channel="tests"
   [[gateway.inout]]
     account="telegram.devswag"
-    channel="@devswag"
+    channel="-389042729"
   [[gateway.inout]]
     account="gitter.swagfordev"
     channel="swag-for-dev/Testing"
