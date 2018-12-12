@@ -1,5 +1,5 @@
 [general]
-RemoteNickFormat="{NICK} ({CHANNEL}@{BRIDGE}): "
+RemoteNickFormat="{NICK} ({BRIDGE})"
 TranslationAttribution=" [translated by :google:]"
 PreserveThreading=true
 ShowUserTyping=true
@@ -12,18 +12,20 @@ IconURL="https://identicons.github.com/{NICK}.png"
 [slack]
 [slack.swagfordev]
 Token="${MATTERBRIDGE_SLACK_SWAGFORDEV_TOKEN}"
+RemoteNickFormat="{NICK} ({BRIDGE})"
 ShowJoinPart=false
 
 [telegram]
 [telegram.devswag]
 Token="${MATTERBRIDGE_TELEGRAM_DEVSWAG_TOKEN}" # bot user: swagmatters_bot
-RemoteNickFormat="{NICK}@{PROTOCOL}: "
+RemoteNickFormat="{NICK} ({BRIDGE})"
 UseInsecureURL=true
 ShowJoinPart=false
 
 [gitter]
 [gitter.swagfordev]
 Token="${MATTERBRIDGE_GITTER_SWAGFORDEV_TOKEN}"
+RemoteNickFormat="{NICK} ({BRIDGE})"
 ShowJoinPart=false
 
 ## GATEWAYS & BRIDGES
