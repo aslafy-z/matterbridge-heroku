@@ -39,4 +39,4 @@ enable=true
     channel="@devswag"
   [[gateway.inout]]
     account="gitter.swagfordev"
-    channel="swag-for-dev/Lobby"
+    channel="swag-for-dev/Testing"
